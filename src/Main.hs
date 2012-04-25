@@ -3,7 +3,6 @@ module Main (main) where
 import FileOperation
 import NoteOperation
 import Operation
-import System( getArgs )
 
 -- | Main Function
 main = do
