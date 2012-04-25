@@ -1,0 +1,20 @@
+module Main (main) where
+
+import FileOperation
+import NoteOperation
+import Operation
+import System( getArgs )
+
+-- | Main Function
+main = do
+  putStrLn "Filepath to Tex File: "
+  texFilePath <- getLine
+  
+  mainTexFile <- readFile texFilePath -- ^ read main tex files
+
+  allTexFiles <- joinFiles (removeComment mainTexFile) (getTexFilesDirectory  texFilePath) -- ^ join all included tex files and remove tex comments
+ 
+  putStrLn "Filepath to XML File: "
+  xmlFilePath <- getLine
+  writeToXml  xmlFilePath (elimRedundancy (joinNotes allTexFiles 0 [])) -- ^ generate notes and write them to the XML file
+

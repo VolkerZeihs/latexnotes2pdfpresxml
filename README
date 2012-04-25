@@ -1,0 +1,26 @@
+Latexnotes2pdfpresxml is a tool to creating pdfpres readable XML file from Latex notes.
+
+TODO:
+  > implement framebrakes 
+ 
+Build it with:
+  > cabal configure
+  > cabal build
+or
+  > cabal install
+
+For building the documentation use:
+  > cabal haddock --executables
+
+The program needs two files: 
+
+For example use ghci.
+  > cd src
+  > ghci
+  Prelude> :l main.hs
+  *Main> :main 
+
+Please think about the utf8 encoding.
+
+Bugs:
+

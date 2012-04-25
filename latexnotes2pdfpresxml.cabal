@@ -1,0 +1,16 @@
+Name: latexnotes2pdfpresxml
+Version: 0
+License: GPL-3
+Author: Volker, Zeihs
+Maintainer: Prof. Dr. Braun
+category: tool
+Build-type: Simple
+Cabal-version: >=1.2
+description: latexnotes2pdfpresxml is a tool to creating a pdfpres readable XML file from notes within the latex source code. 
+
+executable latexnotes2pdfpresxml
+  hs-source-dirs: src
+  Main-is: Main.hs
+  Build-depends: base >= 4.2
+
+
