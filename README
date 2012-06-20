@@ -17,7 +17,7 @@ The program needs two files:
 For example use ghci.
   > cd src
   > ghci
-  Prelude> :l main.hs
+  Prelude> :l Main.hs
   *Main> :main 
 
 Please think about the utf8 encoding.
