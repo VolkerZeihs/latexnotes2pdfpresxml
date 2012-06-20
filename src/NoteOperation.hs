@@ -12,7 +12,7 @@ joinNotes :: String -- ^ Latex source code
 joinNotes [] _ akku = akku
 joinNotes texContent frameCounter akku 
   | (testOfFrame texContent) = joinNotes (afterRightCurlyBracket texContent) (frameCounter + 1) akku
-  | (testOfPause texContent) = joinNotes (tail (tail (tail (tail (tail texContent))))) (frameCounter + 1) akku
+  | (testOfPause texContent) = joinNotes ((\('\\':'p':'a':'u':'s':'e':afterPause) -> afterPause) texContent) (frameCounter + 1) akku
   | (testOfNote texContent) = joinNotes (afterRightCurlyBracket texContent) frameCounter (akku ++ (createNoteTupel texContent frameCounter))
   | otherwise = joinNotes (tail texContent) frameCounter akku
 
